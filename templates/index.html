@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>🌦️ Weather App</h1>
+
+            <p>Check current weather and 5-day forecast</p>
+
+        </header>
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name"
+            >
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- Loading -->
+
+        <div id="loading" class="loading">
+            Loading weather...
+        </div>
+
+
+        <!-- Error -->
+
+        <div id="error" class="error"></div>
+
+
+        <!-- Weather Section -->
+
+        <div id="weatherSection">
+
+            <!-- Current Weather -->
+
+            <div class="current-weather">
+
+                <div class="location">
+
+                    <h2 id="location">--</h2>
+
+                    <p id="country">--</p>
+
+                </div>
+
+
+                <div class="main-weather">
+
+                    <div id="weatherIcon"
+                         class="weather-icon">
+                        🌤️
+                    </div>
+
+                    <div>
+
+                        <div id="temperature"
+                             class="temperature">
+                            --°C
+                        </div>
+
+                        <div id="condition"
+                             class="condition">
+                            --
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Details -->
+
+                <div class="weather-details">
+
+                    <div class="detail-card">
+
+                        <span>🌡️</span>
+
+                        <p>Feels Like</p>
+
+                        <strong id="feelsLike">
+                            --°C
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>💧</span>
+
+                        <p>Humidity</p>
+
+                        <strong id="humidity">
+                            --%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <span>💨</span>
+
+                        <p>Wind Speed</p>
+
+                        <strong id="wind">
+                            -- km/h
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Forecast -->
+
+            <h2 class="forecast-title">
+                5-Day Forecast
+            </h2>
+
+            <div id="forecast"
+                 class="forecast">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
